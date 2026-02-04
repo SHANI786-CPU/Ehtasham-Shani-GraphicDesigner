@@ -16,8 +16,11 @@
         .glass-card:hover { border-color: #ff6b4a; transform: translateY(-5px); }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        /* Image fix for your profile */
-        .profile-img { object-fit: cover; object-position: center; border-radius: 40px; border: 1px solid rgba(255, 107, 74, 0.2); }
+        
+        /* Portfolio Image Hover */
+        .work-card img { transition: transform 0.5s ease; filter: grayscale(20%); }
+        .work-card:hover img { transform: scale(1.08); filter: grayscale(0%); }
+        .work-card { overflow: hidden; position: relative; }
     </style>
 </head>
 <body>
@@ -39,9 +42,61 @@
             </h1>
             <p class="text-white/40 max-w-2xl mx-auto text-lg mb-12">I craft digital experiences that blend aesthetics with functionality.</p>
             <div class="flex gap-4 justify-center">
-                <a href="#work" class="bg-[#ff6b4a] px-10 py-4 rounded-full font-bold">View Work</a>
-                <a href="#contact" class="border border-white/20 px-10 py-4 rounded-full font-bold">Contact</a>
+                <a href="#work" class="bg-[#ff6b4a] px-10 py-4 rounded-full font-bold text-black hover:scale-105 transition">View Work</a>
+                <a href="#contact" class="border border-white/20 px-10 py-4 rounded-full font-bold hover:bg-white/5 transition">Contact</a>
             </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-24 px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <p class="text-[#ff6b4a] font-bold uppercase tracking-[0.3em] text-xs mb-2">My Portfolio</p>
+            <h2 class="text-5xl font-black tracking-tighter">SELECTED WORK</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">Modern Dashboard</h3><p class="text-white/40 text-xs mt-2 uppercase">UI/UX Design</p></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">Mobile Banking App</h3><p class="text-white/40 text-xs mt-2 uppercase">Mobile App</p></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">Luxury Branding</h3><p class="text-white/40 text-xs mt-2 uppercase">Branding</p></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1551288049-bbbda546697a?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">E-Commerce Website</h3><p class="text-white/40 text-xs mt-2 uppercase">Web Design</p></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">Creative Logo Pack</h3><p class="text-white/40 text-xs mt-2 uppercase">Graphic Design</p></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">Social Media Ads</h3><p class="text-white/40 text-xs mt-2 uppercase">Ads Design</p></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1586717791821-3f44a563dc4c?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">Product Packaging</h3><p class="text-white/40 text-xs mt-2 uppercase">Print Design</p></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">Fitness App UI</h3><p class="text-white/40 text-xs mt-2 uppercase">UI/UX Design</p></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] reveal">
+                <div class="aspect-video overflow-hidden"><img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800" class="w-full h-full object-cover"></div>
+                <div class="p-6"><h3 class="text-xl font-bold">Streaming Platform</h3><p class="text-white/40 text-xs mt-2 uppercase">Web App</p></div>
+            </a>
+        </div>
+
+        <div class="text-center mt-20 reveal">
+            <a href="https://www.behance.net/shanikhan27" target="_blank" class="inline-flex items-center gap-2 border border-white/20 px-12 py-4 rounded-full font-bold hover:bg-[#ff6b4a] hover:text-black hover:border-[#ff6b4a] transition-all group">
+                SHOW MORE ON BEHANCE <i data-lucide="arrow-right" class="group-hover:translate-x-1 transition"></i>
+            </a>
         </div>
     </section>
 
@@ -49,46 +104,14 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl font-bold mb-16 text-center uppercase tracking-tighter">My <span class="text-[#ff6b4a]">Services</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <i data-lucide="pen-tool" class="text-[#ff6b4a] mb-5"></i>
-                    <h3 class="text-xl font-bold mb-2">Graphic Design</h3>
-                    <p class="text-white/40 text-sm">Visual designs that communicate your brand effectively.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <i data-lucide="layout" class="text-[#ff6b4a] mb-5"></i>
-                    <h3 class="text-xl font-bold mb-2">UI/UX Design</h3>
-                    <p class="text-white/40 text-sm">Intuitive interfaces for exceptional digital journeys.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <i data-lucide="code-2" class="text-[#ff6b4a] mb-5"></i>
-                    <h3 class="text-xl font-bold mb-2">Website Design</h3>
-                    <p class="text-white/40 text-sm">Modern, responsive sites that captivate visitors.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <i data-lucide="smartphone" class="text-[#ff6b4a] mb-5"></i>
-                    <h3 class="text-xl font-bold mb-2">Mobile App Design</h3>
-                    <p class="text-white/40 text-sm">Seamless mobile experiences for iOS & Android.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <i data-lucide="crown" class="text-[#ff6b4a] mb-5"></i>
-                    <h3 class="text-xl font-bold mb-2">Logo Design</h3>
-                    <p class="text-white/40 text-sm">Unique logos that represent your brand's identity.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <i data-lucide="brush" class="text-[#ff6b4a] mb-5"></i>
-                    <h3 class="text-xl font-bold mb-2">Branding</h3>
-                    <p class="text-white/40 text-sm">Comprehensive brand identities for emotional connection.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <i data-lucide="video" class="text-[#ff6b4a] mb-5"></i>
-                    <h3 class="text-xl font-bold mb-2">Motion Design</h3>
-                    <p class="text-white/40 text-sm">Dynamic visual storytelling with animations.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl reveal">
-                    <i data-lucide="megaphone" class="text-[#ff6b4a] mb-5"></i>
-                    <h3 class="text-xl font-bold mb-2">Creative Ads</h3>
-                    <p class="text-white/40 text-sm">Eye-catching ads that drive engagement.</p>
-                </div>
+                <div class="glass-card p-8 rounded-3xl reveal"><i data-lucide="pen-tool" class="text-[#ff6b4a] mb-5"></i><h3 class="text-xl font-bold mb-2">Graphic Design</h3><p class="text-white/40 text-sm">Visual designs that communicate your brand effectively.</p></div>
+                <div class="glass-card p-8 rounded-3xl reveal"><i data-lucide="layout" class="text-[#ff6b4a] mb-5"></i><h3 class="text-xl font-bold mb-2">UI/UX Design</h3><p class="text-white/40 text-sm">Intuitive interfaces for exceptional digital journeys.</p></div>
+                <div class="glass-card p-8 rounded-3xl reveal"><i data-lucide="code-2" class="text-[#ff6b4a] mb-5"></i><h3 class="text-xl font-bold mb-2">Website Design</h3><p class="text-white/40 text-sm">Modern, responsive sites that captivate visitors.</p></div>
+                <div class="glass-card p-8 rounded-3xl reveal"><i data-lucide="smartphone" class="text-[#ff6b4a] mb-5"></i><h3 class="text-xl font-bold mb-2">Mobile App Design</h3><p class="text-white/40 text-sm">Seamless mobile experiences for iOS & Android.</p></div>
+                <div class="glass-card p-8 rounded-3xl reveal"><i data-lucide="crown" class="text-[#ff6b4a] mb-5"></i><h3 class="text-xl font-bold mb-2">Logo Design</h3><p class="text-white/40 text-sm">Unique logos that represent your brand's identity.</p></div>
+                <div class="glass-card p-8 rounded-3xl reveal"><i data-lucide="brush" class="text-[#ff6b4a] mb-5"></i><h3 class="text-xl font-bold mb-2">Branding</h3><p class="text-white/40 text-sm">Comprehensive brand identities for emotional connection.</p></div>
+                <div class="glass-card p-8 rounded-3xl reveal"><i data-lucide="video" class="text-[#ff6b4a] mb-5"></i><h3 class="text-xl font-bold mb-2">Motion Design</h3><p class="text-white/40 text-sm">Dynamic visual storytelling with animations.</p></div>
+                <div class="glass-card p-8 rounded-3xl reveal"><i data-lucide="megaphone" class="text-[#ff6b4a] mb-5"></i><h3 class="text-xl font-bold mb-2">Creative Ads</h3><p class="text-white/40 text-sm">Eye-catching ads that drive engagement.</p></div>
             </div>
         </div>
     </section>
@@ -96,26 +119,30 @@
     <section id="about" class="py-24 px-8 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="reveal">
-                <h2 class="text-5xl font-black mb-6 tracking-tighter">DESIGNING THE FUTURE</h2>
-                <p class="text-white/50 text-lg mb-8">I'm Ehtasham Shani, transforming ideas into visual reality.</p>
-                <div class="space-y-4">
-                    <div class="flex justify-between font-bold"><span>UI/UX</span><span>95%</span></div>
-                    <div class="h-1 bg-white/10 w-full"><div class="h-1 bg-[#ff6b4a] w-[95%]"></div></div>
+                <h2 class="text-5xl font-black mb-6 tracking-tighter uppercase">Designing The Future</h2>
+                <p class="text-white/50 text-lg mb-8 leading-relaxed">I'm Ehtasham Shani, a creative enthusiast with a deep eye for detail. I help businesses transform their ideas into visually stunning digital products.</p>
+                <div class="space-y-6">
+                    <div><div class="flex justify-between font-bold mb-2"><span>UI/UX DESIGN</span><span>95%</span></div><div class="h-[2px] bg-white/10 w-full"><div class="h-[2px] bg-[#ff6b4a] w-[95%]"></div></div></div>
+                    <div><div class="flex justify-between font-bold mb-2"><span>ADOBE FIGMA</span><span>98%</span></div><div class="h-[2px] bg-white/10 w-full"><div class="h-[2px] bg-[#ff6b4a] w-[98%]"></div></div></div>
                 </div>
             </div>
-            <div class="reveal relative">
-                <img src="https://raw.githubusercontent.com/SHANI786-CPU/Ehtasham-Shani-GraphicDesigner/main/GMP%20LOGO%20720x720%20px.jpg" class="profile-img w-full max-w-md mx-auto shadow-2xl">
+            <div class="reveal relative flex justify-center">
+                <img src="https://raw.githubusercontent.com/SHANI786-CPU/Ehtasham-Shani-GraphicDesigner/main/GMP%20LOGO%20720x720%20px.jpg" class="rounded-[40px] w-full max-w-sm grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl border border-white/10">
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="py-20 border-t border-white/5 text-center">
-        <h2 class="text-5xl font-black mb-10 tracking-tighter uppercase">Let's create something <span class="text-[#ff6b4a]">amazing</span></h2>
-        <a href="mailto:ehtashamshaniofficial@gmail.com" class="text-[#ff6b4a] text-xl font-bold underline">ehtashamshaniofficial@gmail.com</a>
-        <div class="flex justify-center gap-8 mt-12 text-white/40">
-            <a href="https://www.linkedin.com/in/ehtasham-shani-4b0672190/" target="_blank"><i data-lucide="linkedin"></i></a>
-            <a href="https://www.instagram.com/ehtashamshani_/" target="_blank"><i data-lucide="instagram"></i></a>
-            <a href="https://www.behance.net/shanikhan27" target="_blank"><i data-lucide="external-link"></i></a>
+    <footer id="contact" class="py-24 border-t border-white/5 bg-black text-center">
+        <div class="reveal">
+            <h2 class="text-6xl font-black mb-10 tracking-tighter uppercase">Let's create something <span class="text-[#ff6b4a]">amazing</span></h2>
+            <a href="mailto:ehtashamshaniofficial@gmail.com" class="text-2xl font-bold hover:text-[#ff6b4a] transition">ehtashamshaniofficial@gmail.com</a>
+            
+            <div class="flex justify-center gap-10 mt-16">
+                <a href="https://www.linkedin.com/in/ehtasham-shani-4b0672190/" target="_blank" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#ff6b4a] hover:text-black transition-all"><i data-lucide="linkedin"></i></a>
+                <a href="https://www.instagram.com/ehtashamshani_/" target="_blank" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#ff6b4a] hover:text-black transition-all"><i data-lucide="instagram"></i></a>
+                <a href="https://www.behance.net/shanikhan27" target="_blank" class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#ff6b4a] hover:text-black transition-all"><i data-lucide="external-link"></i></a>
+            </div>
+            <p class="text-[10px] text-white/20 mt-12 uppercase tracking-widest font-bold">© 2024 EHTASHAM SHANI. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
