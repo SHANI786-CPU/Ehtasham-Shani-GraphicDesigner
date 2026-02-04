@@ -3,140 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ehtasham Shani | Creative Portfolio</title>
+    <title>Ehtasham Shani | Creative Designer Portfolio</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
-        * { font-family: 'Plus Jakarta Sans', sans-serif; cursor: none; }
-        body { background-color: #050505; color: white; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; cursor: default; }
         
-        /* Custom Cursor */
-        #cursor { width: 10px; height: 10px; background: #ff6b4a; border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999; transition: transform 0.1s; }
-        #cursor-blur { width: 40px; height: 40px; border: 1px solid rgba(255, 107, 74, 0.5); border-radius: 50%; position: fixed; pointer-events: none; z-index: 9998; transition: transform 0.15s ease-out; }
-
+        .gradient-text { background: linear-gradient(to right, #ff6b4a, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .bg-orange-main { background-color: #ff6b4a; }
+        .border-white-soft { border-color: rgba(255, 255, 255, 0.1); }
         .glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        .gradient-text { background: linear-gradient(135deg, #ff6b4a 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        .noise { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; opacity: .03; z-index: 50; background-image: url(https://grainy-gradients.vercel.app/noise.svg); }
-        
-        /* Smooth Scroll */
-        html { scroll-behavior: smooth; }
+
+        /* Animation for Scroll */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Marquee Effect */
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .marquee-content { display: flex; animation: marquee 25s linear infinite; width: max-content; }
     </style>
 </head>
 <body>
-    <div class="noise"></div>
-    <div id="cursor"></div>
-    <div id="cursor-blur"></div>
 
-    <nav class="fixed top-0 w-full z-40 border-b border-white/5 bg-black/50 backdrop-blur-lg py-5 px-8 flex justify-between items-center">
-        <div class="text-xl font-extrabold tracking-tighter">SHANI<span class="text-[#ff6b4a]">.</span></div>
-        <div class="hidden md:flex gap-10 text-xs uppercase tracking-widest font-semibold text-white/50">
-            <a href="#work" class="hover:text-white transition">Work</a>
-            <a href="#services" class="hover:text-white transition">Services</a>
-            <a href="#about" class="hover:text-white transition">About</a>
+    <nav class="fixed top-0 w-full z-50 bg-black/60 backdrop-blur-xl py-5 px-10 border-b border-white/5 flex justify-between items-center">
+        <div class="text-xl font-black tracking-tighter uppercase">Ehtasham<span class="text-[#ff6b4a]">.</span></div>
+        <div class="hidden md:flex gap-10 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">
+            <a href="#work" class="hover:text-[#ff6b4a] transition">Work</a>
+            <a href="#services" class="hover:text-[#ff6b4a] transition">Services</a>
+            <a href="#about" class="hover:text-[#ff6b4a] transition">About</a>
             <a href="#contact" class="hover:text-white transition">Contact</a>
         </div>
-        <a href="https://wa.me/923356440525" class="text-xs font-bold border border-[#ff6b4a] text-[#ff6b4a] px-6 py-2 rounded-full hover:bg-[#ff6b4a] hover:text-white transition">HIRE ME</a>
+        <a href="https://wa.me/923356440525" target="_blank" class="bg-orange-main text-white px-7 py-2.5 rounded-full text-xs font-bold hover:scale-105 transition transform">LET'S TALK</a>
     </nav>
 
-    <section class="h-screen flex flex-col justify-center items-center px-6 relative">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#ff6b4a]/10 rounded-full blur-[120px]"></div>
-        <div class="text-center z-10" data-aos="fade-up">
-            <h1 class="text-7xl md:text-[120px] font-extrabold tracking-tighter leading-none mb-6">
-                CREATIVE<br><span class="gradient-text">DESIGNER</span>
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff6b4a]/5 rounded-full blur-[120px]"></div>
+        
+        <div class="reveal">
+            <div class="mb-8 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase tracking-widest text-white/60">
+                <span class="w-2 h-2 bg-[#ff6b4a] rounded-full animate-pulse"></span>
+                Available for new projects
+            </div>
+            <h1 class="text-6xl md:text-[110px] font-black tracking-tighter leading-[0.9] mb-8">
+                EHTASHAM SHANI <br> <span class="gradient-text">CREATIVE DESIGNER</span>
             </h1>
-            <p class="text-white/40 max-w-lg mx-auto text-lg md:text-xl font-light leading-relaxed">
-                Turning complex ideas into high-end digital experiences that people love.
+            <p class="text-white/40 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed mb-12">
+                I craft high-end digital experiences that blend aesthetics with functionality. Specializing in UI/UX, branding, and creative development.
             </p>
+            <div class="flex flex-col sm:row gap-5 justify-center">
+                <a href="#work" class="bg-orange-main px-10 py-4 rounded-full font-bold text-lg hover:bg-[#e85a3c] transition shadow-lg shadow-[#ff6b4a]/20">Explore Projects</a>
+                <a href="#contact" class="border border-white/10 px-10 py-4 rounded-full font-bold text-lg hover:bg-white/5 transition">Work With Me</a>
+            </div>
         </div>
     </section>
 
-    <section id="work" class="py-32 px-8 max-w-7xl mx-auto">
-        <div class="flex justify-between items-end mb-20" data-aos="fade-right">
-            <div>
-                <p class="text-[#ff6b4a] font-bold text-xs tracking-[0.3em] uppercase mb-4">Selected Projects</p>
-                <h2 class="text-5xl font-extrabold tracking-tighter">PORTFOLIO</h2>
+    <div class="py-12 border-y border-white/5 bg-white/[0.01] overflow-hidden">
+        <div class="marquee-content">
+            <div class="px-10 text-xs font-bold uppercase tracking-[0.4em] text-white/20 flex items-center gap-10">
+                <span>UI/UX DESIGN</span> <span class="text-[#ff6b4a]">●</span>
+                <span>BRANDING</span> <span class="text-[#ff6b4a]">●</span>
+                <span>GRAPHIC DESIGN</span> <span class="text-[#ff6b4a]">●</span>
+                <span>WEB DESIGN</span> <span class="text-[#ff6b4a]">●</span>
+                <span>MOBILE APPS</span> <span class="text-[#ff6b4a]">●</span>
             </div>
-            <a href="https://www.behance.net/shanikhan27" class="text-white/40 hover:text-white flex items-center gap-2">ALL WORK <i data-lucide="arrow-right" size="16"></i></a>
+            <div class="px-10 text-xs font-bold uppercase tracking-[0.4em] text-white/20 flex items-center gap-10">
+                <span>UI/UX DESIGN</span> <span class="text-[#ff6b4a]">●</span>
+                <span>BRANDING</span> <span class="text-[#ff6b4a]">●</span>
+                <span>GRAPHIC DESIGN</span> <span class="text-[#ff6b4a]">●</span>
+                <span>WEB DESIGN</span> <span class="text-[#ff6b4a]">●</span>
+                <span>MOBILE APPS</span> <span class="text-[#ff6b4a]">●</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="work" class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-20 reveal">
+            <div>
+                <p class="text-[#ff6b4a] font-bold text-xs tracking-[0.3em] uppercase mb-4">Selected Work</p>
+                <h2 class="text-5xl md:text-7xl font-black tracking-tighter">PORTFOLIO</h2>
+            </div>
+            <a href="https://www.behance.net/shanikhan27" target="_blank" class="text-white/40 hover:text-white transition flex items-center gap-2 text-sm font-bold">ALL PROJECTS <i data-lucide="arrow-up-right" size="18"></i></a>
         </div>
 
         <div class="grid md:grid-cols-2 gap-12">
-            <div class="group" data-aos="fade-up">
-                <div class="rounded-3xl overflow-hidden aspect-[4/5] bg-neutral-900 mb-6">
+            <div class="reveal group">
+                <div class="rounded-[40px] overflow-hidden aspect-square bg-neutral-900 mb-8">
                     <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
                 </div>
-                <h3 class="text-2xl font-bold">Modern Dashboard</h3>
-                <p class="text-white/30 uppercase text-xs tracking-widest mt-2">UI/UX Design • 2024</p>
+                <h3 class="text-3xl font-bold mb-2">Modern Dashboard</h3>
+                <p class="text-white/30 uppercase text-xs tracking-widest font-bold">UI/UX Design • 2024</p>
             </div>
-            <div class="group mt-20" data-aos="fade-up" data-aos-delay="200">
-                <div class="rounded-3xl overflow-hidden aspect-[4/5] bg-neutral-900 mb-6">
+            <div class="reveal group md:mt-32">
+                <div class="rounded-[40px] overflow-hidden aspect-square bg-neutral-900 mb-8">
                     <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
                 </div>
-                <h3 class="text-2xl font-bold">Finance App</h3>
-                <p class="text-white/30 uppercase text-xs tracking-widest mt-2">Mobile Concept • 2024</p>
+                <h3 class="text-3xl font-bold mb-2">Finance App</h3>
+                <p class="text-white/30 uppercase text-xs tracking-widest font-bold">Mobile Concept • 2024</p>
             </div>
         </div>
     </section>
 
     <section id="services" class="py-32 bg-neutral-950 px-8">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
-            <div class="glass-card p-12 rounded-[40px]" data-aos="zoom-in">
-                <i data-lucide="figma" class="text-[#ff6b4a] mb-6" size="40"></i>
-                <h4 class="text-2xl font-bold mb-4">UI/UX Design</h4>
-                <p class="text-white/40 text-sm leading-relaxed">User-centric designs that prioritize usability and conversion.</p>
-            </div>
-            <div class="glass-card p-12 rounded-[40px]" data-aos="zoom-in" data-aos-delay="100">
-                <i data-lucide="palette" class="text-[#ff6b4a] mb-6" size="40"></i>
-                <h4 class="text-2xl font-bold mb-4">Branding</h4>
-                <p class="text-white/40 text-sm leading-relaxed">Unique identities that make your business stand out in the market.</p>
-            </div>
-            <div class="glass-card p-12 rounded-[40px]" data-aos="zoom-in" data-aos-delay="200">
-                <i data-lucide="code" class="text-[#ff6b4a] mb-6" size="40"></i>
-                <h4 class="text-2xl font-bold mb-4">Web Design</h4>
-                <p class="text-white/40 text-sm leading-relaxed">Clean, responsive, and high-performance website layouts.</p>
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-5xl font-black text-center mb-20 tracking-tighter reveal">SERVICES</h2>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="glass-card p-10 rounded-[35px] reveal hover:border-[#ff6b4a] transition">
+                    <i data-lucide="figma" class="text-[#ff6b4a] mb-6" size="32"></i>
+                    <h4 class="text-xl font-bold mb-3">UI/UX Design</h4>
+                    <p class="text-white/40 text-sm leading-relaxed">Modern interfaces focused on user experience.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[35px] reveal hover:border-[#ff6b4a] transition">
+                    <i data-lucide="palette" class="text-[#ff6b4a] mb-6" size="32"></i>
+                    <h4 class="text-xl font-bold mb-3">Branding</h4>
+                    <p class="text-white/40 text-sm leading-relaxed">Unique identities that make brands stand out.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[35px] reveal hover:border-[#ff6b4a] transition">
+                    <i data-lucide="monitor" class="text-[#ff6b4a] mb-6" size="32"></i>
+                    <h4 class="text-xl font-bold mb-3">Web Design</h4>
+                    <p class="text-white/40 text-sm leading-relaxed">Fast, responsive, and high-quality web layouts.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[35px] reveal hover:border-[#ff6b4a] transition">
+                    <i data-lucide="video" class="text-[#ff6b4a] mb-6" size="32"></i>
+                    <h4 class="text-xl font-bold mb-3">Motion</h4>
+                    <p class="text-white/40 text-sm leading-relaxed">Captivating animations to bring designs to life.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="py-20 px-8 border-t border-white/5 bg-black">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-20">
-            <div class="max-w-xl">
-                <h2 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-10">READY TO<br><span class="text-[#ff6b4a]">COLLABORATE?</span></h2>
-                <a href="mailto:ehtashamshaniofficial@gmail.com" class="text-xl md:text-3xl font-light hover:text-[#ff6b4a] transition">ehtashamshaniofficial@gmail.com</a>
+    <section id="about" class="py-32 px-8 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+                <h2 class="text-5xl md:text-6xl font-black tracking-tighter mb-8 leading-tight">
+                    Designing the future,<br><span class="text-[#ff6b4a]">one pixel</span> at a time
+                </h2>
+                <p class="text-white/50 text-lg leading-relaxed mb-10">
+                    I'm Ehtasham Shani, a creative enthusiast with a deep eye for detail. I help businesses transform their ideas into visually stunning digital products.
+                </p>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between text-[10px] uppercase tracking-widest font-bold mb-2 text-white/40"><span>Figma & UI/UX</span><span>95%</span></div>
+                        <div class="h-[2px] bg-white/10 w-full"><div class="h-[2px] bg-[#ff6b4a] w-[95%]"></div></div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-[10px] uppercase tracking-widest font-bold mb-2 text-white/40"><span>Adobe Suite</span><span>90%</span></div>
+                        <div class="h-[2px] bg-white/10 w-full"><div class="h-[2px] bg-[#ff6b4a] w-[90%]"></div></div>
+                    </div>
+                </div>
             </div>
-            <div class="flex flex-col gap-6 text-sm uppercase tracking-[0.2em] font-bold">
-                <a href="https://www.linkedin.com/in/ehtasham-shani-4b0672190/" target="_blank" class="hover:text-[#ff6b4a]">LinkedIn</a>
-                <a href="https://www.instagram.com/ehtashamshani_/" target="_blank" class="hover:text-[#ff6b4a]">Instagram</a>
-                <a href="https://www.behance.net/shanikhan27" target="_blank" class="hover:text-[#ff6b4a]">Behance</a>
-                <a href="https://www.upwork.com/freelancers/~017eb77fb4d0b583ff" target="_blank" class="hover:text-[#ff6b4a]">Upwork</a>
+            <div class="reveal relative">
+                <img src="https://lh3.googleusercontent.com/d/1O9r3uY7D6x-z9A3-z9-Z9-z9-z9-z9-z" alt="Ehtasham Shani" class="rounded-[50px] grayscale hover:grayscale-0 transition duration-700 shadow-2xl border border-white/5">
+                <div class="absolute -bottom-10 -left-10 glass-card p-8 rounded-3xl hidden md:block">
+                    <p class="text-4xl font-black text-[#ff6b4a]">5+</p>
+                    <p class="text-[10px] font-bold uppercase tracking-widest text-white/40">Years Experience</p>
+                </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-32 pt-10 border-t border-white/5 flex justify-between items-center text-[10px] text-white/20 uppercase tracking-widest">
-            <p>© 2024 SHANI DESIGN. ALL RIGHTS RESERVED.</p>
-            <p>DESIGNED BY EHTASHAM SHANI</p>
+    </section>
+
+    <section id="contact" class="py-40 px-8 text-center border-t border-white/5 relative overflow-hidden">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-[#ff6b4a]/5 blur-[120px]"></div>
+        <div class="reveal">
+            <h2 class="text-6xl md:text-[100px] font-black tracking-tighter mb-12">LET'S CREATE<br>SOMETHING <span class="gradient-text">BIG</span></h2>
+            <a href="mailto:ehtashamshaniofficial@gmail.com" class="bg-orange-main text-white px-12 py-5 rounded-full text-xl font-bold inline-flex items-center gap-4 hover:scale-105 transition transform shadow-xl shadow-[#ff6b4a]/20">
+                <i data-lucide="mail"></i> HIRE ME NOW
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-12 px-10 border-t border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-2xl font-black tracking-tighter">SHANI<span class="text-[#ff6b4a]">.</span></div>
+            <div class="flex gap-8">
+                <a href="https://www.linkedin.com/in/ehtasham-shani-4b0672190/" target="_blank" class="text-white/40 hover:text-[#ff6b4a] transition"><i data-lucide="linkedin" size="20"></i></a>
+                <a href="https://www.instagram.com/ehtashamshani_/" target="_blank" class="text-white/40 hover:text-[#ff6b4a] transition"><i data-lucide="instagram" size="20"></i></a>
+                <a href="https://www.behance.net/shanikhan27" target="_blank" class="text-white/40 hover:text-[#ff6b4a] transition"><i data-lucide="external-link" size="20"></i></a>
+            </div>
+            <p class="text-[10px] text-white/20 font-bold uppercase tracking-[0.3em]">© 2024 Ehtasham Shani. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Init AOS
-        AOS.init({ duration: 1000, once: true });
-        // Init Lucide Icons
         lucide.createIcons();
-        
-        // Custom Cursor Logic
-        const cursor = document.getElementById('cursor');
-        const blur = document.getElementById('cursor-blur');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            blur.style.left = (e.clientX - 15) + 'px';
-            blur.style.top = (e.clientY - 15) + 'px';
-        });
+
+        // Scroll Reveal Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Initial call
     </script>
 </body>
 </html>
