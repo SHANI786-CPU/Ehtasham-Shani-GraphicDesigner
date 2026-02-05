@@ -10,88 +10,140 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; }
         .gradient-text { background: linear-gradient(to right, #ff6b4a, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s ease; height: 100%; }
+        .glass-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.5s ease; }
         .glass-card:hover { border-color: #ff6b4a; transform: translateY(-10px); background: rgba(255, 255, 255, 0.05); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
-        .work-img { transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1); width: 100%; height: 100%; object-fit: cover; }
-        .work-card:hover .work-img { transform: scale(1.1); }
+        .work-img { transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1); filter: grayscale(20%); width: 100%; height: 100%; object-fit: cover; }
+        .work-card:hover .work-img { transform: scale(1.1); filter: grayscale(0%); }
         .nav-link { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.6); transition: 0.3s; }
         .nav-link:hover { color: #ff6b4a; }
-        .social-icon { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: 0.3s; color: white; }
+        .social-icon { width: 45px; height: 45px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; transition: 0.4s; color: white; }
         .social-icon:hover { background: #ff6b4a; border-color: #ff6b4a; color: black; transform: translateY(-5px); }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md py-6 px-10 border-b border-white/5 flex justify-between items-center">
+    <nav class="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md py-6 px-8 border-b border-white/5 flex justify-between items-center">
         <div class="text-xl font-black italic tracking-tighter uppercase">EHTASHAM <span class="text-[#ff6b4a]">SHANI.</span></div>
         <div class="hidden md:flex gap-10 items-center">
             <a href="#work" class="nav-link">Portfolio</a>
             <a href="#services" class="nav-link">Services</a>
             <a href="#about" class="nav-link">About</a>
-            <a href="https://wa.me/923356440525" target="_blank" class="bg-[#ff6b4a] text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:scale-105 transition shadow-lg shadow-[#ff6b4a]/20">Hire Me</a>
+            <a href="https://wa.me/923356440525" target="_blank" class="bg-[#ff6b4a] text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest hover:brightness-110 transition">Let's Talk</a>
         </div>
     </nav>
 
     <section class="h-screen flex flex-col justify-center items-center text-center px-6 relative">
         <div class="reveal">
-            <h1 class="text-6xl md:text-[110px] font-black tracking-tighter leading-[0.85] mb-8 uppercase italic">
+            <h1 class="text-5xl md:text-[110px] font-black tracking-tighter leading-[0.85] mb-6 uppercase italic">
                 EHTASHAM SHANI <br> <span class="gradient-text italic">CREATIVE DESIGNER</span>
             </h1>
-            <p class="text-white/40 max-w-2xl mx-auto text-lg italic mb-12 tracking-wide font-light">Transforming visions into high-end digital experiences.</p>
-            <a href="#work" class="bg-[#ff6b4a] text-white px-12 py-5 rounded-full font-black text-sm transition hover:scale-105 uppercase tracking-widest shadow-xl shadow-[#ff6b4a]/30">Explore My Work</a>
+            <p class="text-white/40 max-w-2xl mx-auto text-lg italic mb-10 tracking-wide">Crafting high-end visual identities and digital experiences.</p>
+            <a href="#work" class="bg-[#ff6b4a] text-white px-10 py-4 rounded-full font-black text-sm transition hover:scale-105 uppercase tracking-widest shadow-lg shadow-[#ff6b4a]/20">Explore My Work</a>
         </div>
     </section>
 
     <section id="work" class="py-24 px-8 max-w-7xl mx-auto">
-        <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-16 reveal">Selected Projects</h2>
-        
+        <h2 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter mb-16 reveal">Selected Work</h2>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <a href="https://www.behance.net/gallery/211756209/Social-Media-Creative-Ads" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal">
-                <div class="aspect-square bg-zinc-900 overflow-hidden">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/961168211756209.6727788448553.jpg" class="work-img" onerror="this.src='https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&q=80&w=500'">
-                </div>
-                <div class="p-5 text-center"><h3 class="text-[10px] font-bold uppercase tracking-widest italic opacity-70">Social Media Ads</h3></div>
+            <a href="https://www.behance.net/gallery/211756209/Social-Media-Creative-Ads" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/961168211756209.6727788448553.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Social Media Creative Ads</h3></div>
             </a>
-
-            <a href="https://www.behance.net/gallery/215758257/AutoChase-Brand-Identity" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal">
-                <div class="aspect-square bg-zinc-900 overflow-hidden">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/8d8a57215758257.676fdf246e632.png" class="work-img" onerror="this.src='https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=500'">
-                </div>
-                <div class="p-5 text-center"><h3 class="text-[10px] font-bold uppercase tracking-widest italic opacity-70">AutoChase Branding</h3></div>
+            <a href="https://www.behance.net/gallery/215758257/AutoChase-Brand-Identity" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/8d8a57215758257.676fdf246e632.png" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">AutoChase Branding</h3></div>
             </a>
-
-            <a href="https://www.behance.net/gallery/213237193/Social-Media-Designs-for-Burger-Restaurant" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal">
-                <div class="aspect-square bg-zinc-900 overflow-hidden">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/5e0094213237193.67406a196e16c.jpg" class="work-img" onerror="this.src='https://images.unsplash.com/photo-1594179047519-f347310d3322?auto=format&fit=crop&q=80&w=500'">
-                </div>
-                <div class="p-5 text-center"><h3 class="text-[10px] font-bold uppercase tracking-widest italic opacity-70">Restaurant Designs</h3></div>
+            <a href="https://www.behance.net/gallery/213237193/Social-Media-Designs-for-Burger-Restaurant" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/5e0094213237193.67406a196e16c.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Restaurant Designs</h3></div>
             </a>
-
-            <a href="https://www.behance.net/gallery/211516701/Social-Media-Ads-for-Real-Estate" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal">
-                <div class="aspect-square bg-zinc-900 overflow-hidden">
-                    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/6246e1211516701.67252277ed910.jpg" class="work-img" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=500'">
-                </div>
-                <div class="p-5 text-center"><h3 class="text-[10px] font-bold uppercase tracking-widest italic opacity-70">Real Estate Ads</h3></div>
+            <a href="https://www.behance.net/gallery/211516701/Social-Media-Ads-for-Real-Estate" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/6246e1211516701.67252277ed910.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Real Estate Ads</h3></div>
             </a>
+            <a href="https://www.behance.net/gallery/211754665/Chocolate-Packaging-Design" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/039649211754665.6727739502758.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Packaging Design</h3></div>
+            </a>
+            <a href="https://www.behance.net/gallery/213123861/Social-Media-Creative-Post-for-Burger-Shop" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/98927e213123861.673f324419996.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Burger Shop Post</h3></div>
+            </a>
+            <a href="https://www.behance.net/gallery/210515637/23rd-March-Social-Media-Post" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/4c1b2f210515637.67139f40e3a6c.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Creative Ad Design</h3></div>
+            </a>
+            <a href="https://www.behance.net/gallery/210515437/Zero-Waste-Day-Post" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/8f108f210515437.67139e8f4989e.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Campaign Post</h3></div>
+            </a>
+            <a href="https://www.behance.net/gallery/215758657/Logo-Portfolio-2025-V2" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/7a57a5215758657.676fe17599553.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Logo Portfolio</h3></div>
+            </a>
+            <a href="https://www.behance.net/gallery/215757651/Cosmetic-Product-Packaging" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/453d7e215757651.676fdb98356c3.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Product Packaging</h3></div>
+            </a>
+            <a href="https://www.behance.net/gallery/203947155/Jewellery-Social-Media-Post" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/32d03a203947155.669f1c7f5c35b.jpg" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Jewellery Ads</h3></div>
+            </a>
+            <a href="https://www.behance.net/gallery/204217315/Modern-Dashboard-UI" target="_blank" class="work-card glass-card rounded-[32px] overflow-hidden reveal group">
+                <div class="aspect-square overflow-hidden bg-zinc-900"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/7a274c204217315.66a760ef16278.png" class="work-img"></div>
+                <div class="p-5 text-center"><h3 class="text-[9px] font-bold uppercase tracking-widest italic opacity-60">Dashboard UI</h3></div>
+            </a>
+        </div>
+    </section>
 
+    <section id="services" class="py-24 px-8 bg-black border-y border-white/5">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-black mb-16 uppercase italic">Expertise</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass-card p-10 rounded-3xl reveal"><i data-lucide="brush" class="text-[#ff6b4a] mx-auto mb-4"></i><span class="text-[10px] font-bold uppercase tracking-widest block">Graphic Design</span></div>
+                <div class="glass-card p-10 rounded-3xl reveal"><i data-lucide="layout" class="text-[#ff6b4a] mx-auto mb-4"></i><span class="text-[10px] font-bold uppercase tracking-widest block">UI/UX Design</span></div>
+                <div class="glass-card p-10 rounded-3xl reveal"><i data-lucide="monitor" class="text-[#ff6b4a] mx-auto mb-4"></i><span class="text-[10px] font-bold uppercase tracking-widest block">Website Design</span></div>
+                <div class="glass-card p-10 rounded-3xl reveal"><i data-lucide="smartphone" class="text-[#ff6b4a] mx-auto mb-4"></i><span class="text-[10px] font-bold uppercase tracking-widest block">App Design</span></div>
+                <div class="glass-card p-10 rounded-3xl reveal"><i data-lucide="crown" class="text-[#ff6b4a] mx-auto mb-4"></i><span class="text-[10px] font-bold uppercase tracking-widest block">Logo Design</span></div>
+                <div class="glass-card p-10 rounded-3xl reveal"><i data-lucide="award" class="text-[#ff6b4a] mx-auto mb-4"></i><span class="text-[10px] font-bold uppercase tracking-widest block">Branding</span></div>
+                <div class="glass-card p-10 rounded-3xl reveal"><i data-lucide="film" class="text-[#ff6b4a] mx-auto mb-4"></i><span class="text-[10px] font-bold uppercase tracking-widest block">Motion Design</span></div>
+                <div class="glass-card p-10 rounded-3xl reveal"><i data-lucide="megaphone" class="text-[#ff6b4a] mx-auto mb-4"></i><span class="text-[10px] font-bold uppercase tracking-widest block">Creative Ads</span></div>
             </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 px-8 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="reveal">
+                <h2 class="text-6xl font-black mb-8 italic uppercase leading-none tracking-tighter">Visual <br> <span class="text-[#ff6b4a]">Excellence.</span></h2>
+                <p class="text-white/40 text-lg mb-10 italic leading-relaxed">I am Ehtasham Shani, a professional designer committed to crafting impactful brand identities and digital experiences.</p>
+            </div>
+            <div class="reveal flex justify-center lg:justify-end">
+                <img src="https://raw.githubusercontent.com/SHANI786-CPU/Ehtasham-Shani-GraphicDesigner/main/GMP%20LOGO%20720x720%20px.jpg" class="rounded-[40px] w-full max-w-sm border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+        </div>
     </section>
 
     <footer class="py-24 px-8 border-t border-white/5 text-center">
-        <h2 class="text-4xl font-black mb-10 italic uppercase tracking-widest">Get In Touch</h2>
-        <a href="mailto:ehtashamshaniofficial@gmail.com" class="text-xl md:text-3xl font-black text-[#ff6b4a] hover:scale-110 transition inline-block mb-16 underline underline-offset-8 decoration-white/10">ehtashamshaniofficial@gmail.com</a>
+        <h2 class="text-xl font-black mb-6 italic uppercase tracking-widest opacity-30">Get In Touch</h2>
         
-        <div class="flex flex-wrap justify-center gap-6 mb-20 relative z-10">
+        <a href="mailto:ehtashamshaniofficial@gmail.com" class="text-xl md:text-3xl font-black hover:text-[#ff6b4a] transition-all duration-300 block mb-12">ehtashamshaniofficial@gmail.com</a>
+        
+        <div class="flex flex-wrap justify-center gap-6 mb-20">
             <a href="https://www.behance.net/shanikhan27" target="_blank" class="social-icon"><i data-lucide="external-link"></i></a>
             <a href="https://x.com/EhtashamShani22" target="_blank" class="social-icon"><i data-lucide="twitter"></i></a>
-            <a href="https://www.upwork.com/freelancers/~017eb77fb4d0b583ff" target="_blank" class="social-icon"><span class="font-black text-xs">Up</span></a>
+            <a href="https://www.upwork.com/freelancers/~017eb77fb4d0b583ff" target="_blank" class="social-icon"><span class="font-bold text-xs">Up</span></a>
+            <a href="https://www.pinterest.com/ehtashamshanidesigns/" target="_blank" class="social-icon"><i data-lucide="framer"></i></a>
+            <a href="https://www.linkedin.com/in/ehtasham-shani-4b0672190/" target="_blank" class="social-icon"><i data-lucide="linkedin"></i></a>
+            <a href="https://www.instagram.com/ehtashamshani_/" target="_blank" class="social-icon"><i data-lucide="instagram"></i></a>
         </div>
-        <p class="text-[10px] text-white/20 uppercase tracking-[0.8em] font-black">© 2026 EHTASHAM SHANI</p>
+
+        <p class="text-[10px] text-white/20 uppercase tracking-[0.6em] font-black">© 2026 EHTASHAM SHANI. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script>
