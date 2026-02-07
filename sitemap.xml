@@ -1,28 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
   <url>
-    <loc>https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/</loc>
+    <loc>https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/index.html</loc>
     <lastmod>2026-02-07</lastmod>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/#services</loc>
+    <loc>https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/about.html</loc>
     <lastmod>2026-02-07</lastmod>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/#work</loc>
+    <loc>https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/services.html</loc>
     <lastmod>2026-02-07</lastmod>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/#contact</loc>
+    <loc>https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/work.html</loc>
     <lastmod>2026-02-07</lastmod>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-
 </urlset>
