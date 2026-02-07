@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Ehtasham Shani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #ff6b4a; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.08); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #050505; color: #ffffff; background-image: radial-gradient(circle at 10% 20%, #1a100d 0%, transparent 30%), radial-gradient(circle at 90% 80%, #0d0d1a 0%, transparent 30%); }
+        .glass { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid var(--border); transition: 0.4s ease; border-radius: 30px; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-[100] py-6 px-8 md:px-16 flex justify-between items-center glass border-none rounded-none bg-black/40">
+        <div class="text-xl font-black italic tracking-tighter uppercase">ES <span class="text-[#ff6b4a]">.</span></div>
+        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <a href="index.html" class="hover:text-[#ff6b4a]">Home</a>
+            <a href="about.html" class="text-[#ff6b4a]">About</a>
+            <a href="services.html" class="hover:text-[#ff6b4a]">Services</a>
+            <a href="work.html" class="hover:text-[#ff6b4a]">Work</a>
+            <a href="index.html#contact" class="bg-[#ff6b4a] px-5 py-2 rounded-full text-white">Hire</a>
+        </div>
+    </nav>
+
+    <section class="min-h-screen pt-40 px-8 md:px-24">
+        <div class="reveal">
+            <h1 class="text-6xl md:text-8xl font-black uppercase italic mb-12">THE <span class="text-[#ff6b4a]">VISION.</span></h1>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="glass p-10">
+                    <h2 class="text-2xl font-bold mb-6 italic">Who is Ehtasham Shani?</h2>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        Main ek Creative Designer hoon jo digital experiences ko shape karta hoon. Mera kaam sirf pixels set karna nahi, balki brand ki personality ko visuals ke zariye zinda karna hai. Karachi se kaam karte hue, maine dunya bhar ke clients ke vision ko reality mein badla hai.
+                    </p>
+                    <div class="space-y-6">
+                        <h3 class="text-[#ff6b4a] font-bold tracking-widest text-sm">DESIGN ARSENAL</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10">ADOBE PHOTOSHOP</span>
+                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10">ILLUSTRATOR</span>
+                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10">FIGMA</span>
+                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10">AFTER EFFECTS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass overflow-hidden h-[500px] rounded-[50px]">
+                     <img src="./Fatty Patty mockup behance_.jpg" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
