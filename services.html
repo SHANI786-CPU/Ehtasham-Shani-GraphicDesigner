@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Ehtasham Shani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --accent: #ff6b4a; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.08); }
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #050505; 
+            color: #ffffff; 
+            background-image: radial-gradient(circle at 10% 20%, #1a100d 0%, transparent 30%), radial-gradient(circle at 90% 80%, #0d0d1a 0%, transparent 30%); 
+        }
+        .glass { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid var(--border); transition: 0.4s ease; border-radius: 40px; }
+        .glass:hover { border-color: var(--accent); transform: translateY(-10px); background: rgba(255, 255, 255, 0.06); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 w-full z-[100] py-6 px-8 md:px-16 flex justify-between items-center glass border-none rounded-none bg-black/40">
+        <div class="text-xl font-black italic tracking-tighter uppercase">ES <span class="text-[#ff6b4a]">.</span></div>
+        <div class="flex gap-8 text-[10px] font-bold uppercase tracking-[0.3em]">
+            <a href="index.html" class="hover:text-[#ff6b4a]">Home</a>
+            <a href="about.html" class="hover:text-[#ff6b4a]">About</a>
+            <a href="services.html" class="text-[#ff6b4a]">Services</a>
+            <a href="work.html" class="hover:text-[#ff6b4a]">Work</a>
+            <a href="index.html#contact" class="bg-[#ff6b4a] px-5 py-2 rounded-full text-white">Hire</a>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-8 md:px-24">
+        <div class="reveal">
+            <h1 class="text-6xl md:text-8xl font-black uppercase italic mb-6">PREMIUM <br> <span class="text-[#ff6b4a]">SOLUTIONS.</span></h1>
+            <p class="text-gray-500 max-w-2xl italic text-lg mb-20">Main aapke brand ko sirf design nahi karta, balki usay dunya ke samne aik standard banata hoon.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <div class="glass p-12 reveal">
+                <div class="flex justify-between items-start mb-8">
+                    <i data-lucide="palette" class="text-[#ff6b4a] w-12 h-12"></i>
+                    <span class="text-white/10 font-black text-6xl italic">01</span>
+                </div>
+                <h3 class="text-3xl font-black italic mb-4 uppercase">Visual Branding</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Logo design se lekar mukammal brand guidelines tak. Main aapke business ke liye aisi identity banata hoon jo dekhte hi yaad reh jaye.
+                </p>
+                <ul class="text-[10px] font-bold tracking-widest text-gray-500 space-y-2 uppercase">
+                    <li>• Logo Design</li>
+                    <li>• Color Theory</li>
+                    <li>• Brand Voice</li>
+                </ul>
+            </div>
+
+            <div class="glass p-12 reveal">
+                <div class="flex justify-between items-start mb-8">
+                    <i data-lucide="layout" class="text-[#ff6b4a] w-12 h-12"></i>
+                    <span class="text-white/10 font-black text-6xl italic">02</span>
+                </div>
+                <h3 class="text-3xl font-black italic mb-4 uppercase">UI/UX Interface</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    User-centric design jo sirf dikhne mein acha na ho, balki istemal karne mein bhi asaan ho. Apps aur Websites ka modern interface.
+                </p>
+                <ul class="text-[10px] font-bold tracking-widest text-gray-500 space-y-2 uppercase">
+                    <li>• Mobile Apps</li>
+                    <li>• Dashboards</li>
+                    <li>• Prototyping</li>
+                </ul>
+            </div>
+
+            <div class="glass p-12 reveal">
+                <div class="flex justify-between items-start mb-8">
+                    <i data-lucide="clapperboard" class="text-[#ff6b4a] w-12 h-12"></i>
+                    <span class="text-white/10 font-black text-6xl italic">03</span>
+                </div>
+                <h3 class="text-3xl font-black italic mb-4 uppercase">Motion Design</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Static graphics ko life dena. Motion posters, intro videos aur social media animations jo aapki engagement boost karti hain.
+                </p>
+                <ul class="text-[10px] font-bold tracking-widest text-gray-500 space-y-2 uppercase">
+                    <li>• Ad Campaigns</li>
+                    <li>• Logo Animation</li>
+                    <li>• Social Reels</li>
+                </ul>
+            </div>
+
+            <div class="glass p-12 reveal">
+                <div class="flex justify-between items-start mb-8">
+                    <i data-lucide="box" class="text-[#ff6b4a] w-12 h-12"></i>
+                    <span class="text-white/10 font-black text-6xl italic">04</span>
+                </div>
+                <h3 class="text-3xl font-black italic mb-4 uppercase">Packaging Art</h3>
+                <p class="text-gray-400 leading-relaxed mb-6">
+                    Product packaging jo shelves par nazar aaye. Labels, boxes aur 3D mockups jo aapke product ki value barhate hain.
+                </p>
+                <ul class="text-[10px] font-bold tracking-widest text-gray-500 space-y-2 uppercase">
+                    <li>• Label Design</li>
+                    <li>• Product Mockups</li>
+                    <li>• Print Ready Files</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-20 px-8 text-center border-t border-white/5">
+        <a href="index.html#contact" class="inline-block bg-[#ff6b4a] px-10 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:scale-105 transition mb-10">Start a Project</a>
+        <p class="text-[10px] text-gray-600 uppercase tracking-widest block">© 2026 EHTASHAM SHANI • INNOVATING DESIGN</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
