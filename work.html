@@ -29,8 +29,9 @@
             background: #111;
             border: 1px solid var(--border);
         }
-        .case-img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; }
-        .case-card:hover .case-img { transform: scale(1.05); }
+        /* 🌑 Grayscale logic added here */
+        .case-img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s ease; filter: grayscale(100%); }
+        .case-card:hover .case-img { transform: scale(1.05); filter: grayscale(0%); }
         
         .btn-outline {
             border: 1px solid var(--accent);
@@ -48,7 +49,6 @@
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* 📱 Homepage Style Mobile Nav Animation */
         #mobile-nav { 
             clip-path: circle(0% at 90% 5%);
             transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s;
@@ -103,12 +103,12 @@
             
             <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./1.jpg" class="case-img" alt="Mallenxa">
+                    <img src="./1.jpg" class="case-img" alt="Fatty Patty">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Fatty Patty</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Empowering brands with a unique visual DNA and high-impact social media creative strategies.</p>
-                    <a href="https://www.behance.net/gallery/242877141/Social-Media-Post-Restaurant-Poster-Poster-Design" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/242877141/Social-Media-Post-Restaurant-Poster-Poster-Design" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
@@ -119,153 +119,153 @@
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Auto Chase</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Complete brand guidelines and identity system for a futuristic racing and automotive venture.</p>
-                    <a href="https://www.behance.net/gallery/243288137/AutoChase-Brand-Guidelines-Branding-Logo-Design" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/243288137/AutoChase-Brand-Guidelines-Branding-Logo-Design" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
             <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./3.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./3.jpg" class="case-img" alt="Sweet Chocruit">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Sweet Chocruit</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/225863375/Label-Design-Branding-I-Packaging-Product-Design" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/225863375/Label-Design-Branding-I-Packaging-Product-Design" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
 
             <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./01.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./01.jpg" class="case-img" alt="Mallenxa">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Mallenxa Creative Ads</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/243334625/Mallenxa-Creative-Ads-Social-Media-Posts-Posters" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/243334625/Mallenxa-Creative-Ads-Social-Media-Posts-Posters" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
 
             <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./2.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./2.jpg" class="case-img" alt="Mike App">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Mike Mobile App</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/243722709/Mike-Chat-AI-Mobile-App-UI-Design-Mentorship-App" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/243722709/Mike-Chat-AI-Mobile-App-UI-Design-Mentorship-App" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
 
             <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./10.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./10.jpg" class="case-img" alt="Logo Folio">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Logo Folio</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/221888235/Brand-mark-Logotype-Logofolio" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/221888235/Brand-mark-Logotype-Logofolio" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./9.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./9.jpg" class="case-img" alt="Real Estate">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Real Estate Creative Ads</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/242831719/Social-Media-Post-Real-Estate-Creative-Ads" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/242831719/Social-Media-Post-Real-Estate-Creative-Ads" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./6.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./6.jpg" class="case-img" alt="Print Ad">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Print Ad</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/211113291/Poster-Graphic-Design-Exhibition-Cosmic-Art" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/211113291/Poster-Graphic-Design-Exhibition-Cosmic-Art" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./4.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./4.jpg" class="case-img" alt="Tomato Ketchup">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Tomato Ketchup Creative Ads</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/221810939/Social-Media-Post-Product-Design-Ketchup-Ads" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/221810939/Social-Media-Post-Product-Design-Ketchup-Ads" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./5.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./5.jpg" class="case-img" alt="Face Wash">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Face Wash Label Design</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/223578083/Label-Design-Package-Design-Face-wash-Label" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/223578083/Label-Design-Package-Design-Face-wash-Label" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./8.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./8.jpg" class="case-img" alt="Jewellery">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Jewellery Creative Ads</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/221550291/Jewellery-Design-Social-Media-Post-Poster-Ad" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/221550291/Jewellery-Design-Social-Media-Post-Poster-Ad" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./7.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./7.jpg" class="case-img" alt="Face Wash Ads">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Simple Face Wash Creative Ads</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/215420857/Product-Manipulation-Social-Media-Post-Advertising" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/215420857/Product-Manipulation-Social-Media-Post-Advertising" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./12.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./12.jpg" class="case-img" alt="AL Saif">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">AL Saif Travels Creative Ads</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/205176195/Social-Media-Posts-for-AL-Saif-Travels-Tourism" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/205176195/Social-Media-Posts-for-AL-Saif-Travels-Tourism" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./11.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./11.jpg" class="case-img" alt="Fatty Patty Ads">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">Fatty Patty Creative Ads</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/223798869/Social-Media-Post-Burger-Post-Advertisement-Ads" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/223798869/Social-Media-Post-Burger-Post-Advertisement-Ads" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
-<div class="case-card reveal">
+            <div class="case-card reveal">
                 <div class="img-container mb-8">
-                    <img src="./13.jpg" class="case-img" alt="Fatty Patty">
+                    <img src="./13.jpg" class="case-img" alt="Zero Waste">
                 </div>
                 <div class="pl-2 border-l-2 border-[#ff6b4a]/30">
                     <h3 class="text-2xl font-extrabold uppercase italic mb-3">KDBA Creative Ads</h3>
                     <p class="text-gray-500 text-sm mb-6 leading-relaxed max-w-md">Creative commercial mockups and advertising design focused on high conversion and brand recall.</p>
-                    <a href="https://www.behance.net/gallery/223582939/Zero-Waste-Day-International-Day-Postet-Design" class="btn-outline inline-block">View My Work</a>
+                    <a href="https://www.behance.net/gallery/223582939/Zero-Waste-Day-International-Day-Postet-Design" target="_blank" class="btn-outline inline-block">View My Work</a>
                 </div>
             </div>
 
@@ -289,8 +289,6 @@
 
     <script>
         lucide.createIcons();
-        
-        // 📱 Homepage Navigation Logic
         const openBtn = document.getElementById('open-menu'), 
               closeBtn = document.getElementById('close-menu'), 
               mobileNav = document.getElementById('mobile-nav'),
@@ -309,22 +307,19 @@
         closeBtn.onclick = closeMenu;
         links.forEach(link => link.onclick = closeMenu);
 
-        // Reveal Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
+
     <a href="https://wa.me/923356440525?text=Hi%20Ehtasham,%20I%20saw%20your%20portfolio%20and%20I%20want%20to%20discuss%20a%20design%20project!" 
-   target="_blank" 
-   class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[200] flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all duration-300"
-   aria-label="Contact on WhatsApp">
-    
-    <svg viewBox="0 0 24 24" class="w-8 h-8 md:w-9 md:h-9 fill-white">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-</a>
+       target="_blank" 
+       class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[200] flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all duration-300"
+       aria-label="Contact on WhatsApp">
+        <svg viewBox="0 0 24 24" class="w-8 h-8 md:w-9 md:h-9 fill-white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
 </body>
 </html>
-
-
