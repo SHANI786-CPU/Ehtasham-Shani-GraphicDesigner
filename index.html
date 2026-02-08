@@ -3,7 +3,7 @@
 <head>
     <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Ehtasham Shani | Creative Designer</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,12 +12,13 @@
 
      <style>
         :root { --accent: #ff6b4a; --glass: rgba(255, 255, 255, 0.03); --border: rgba(255, 255, 255, 0.08); }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #050505; 
             color: #ffffff; 
             overflow-x: hidden;
+            width: 100%;
             background-image: 
                 radial-gradient(circle at 10% 20%, #1a100d 0%, transparent 30%),
                 radial-gradient(circle at 90% 80%, #0d0d1a 0%, transparent 30%);
@@ -25,9 +26,8 @@
         .glass { background: var(--glass); backdrop-filter: blur(15px); border: 1px solid var(--border); transition: 0.4s ease; }
         .glass:hover { border-color: var(--accent); background: rgba(255, 255, 255, 0.06); }
         
-        /* 🔧 FIXED HERO TEXT SPACING FOR MOBILE */
         .hero-title { 
-            line-height: 1.1; /* Mobile par overlap rokne ke liye */
+            line-height: 1.1; 
             letter-spacing: -0.02em; 
             font-size: clamp(2.8rem, 12vw, 8rem); 
         }
@@ -41,8 +41,20 @@
         .work-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 24px; filter: grayscale(100%); transition: 0.6s; }
         .work-card:hover .work-img { filter: grayscale(0%); transform: scale(1.03); }
         
-        #mobile-nav { transform: translateX(100%); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        #mobile-nav.open { transform: translateX(0); }
+        /* 🔧 FIXED JERK-FREE MOBILE NAV */
+        #mobile-nav { 
+            clip-path: circle(0% at 90% 5%);
+            transition: clip-path 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #mobile-nav.open { 
+            clip-path: circle(150% at 90% 5%);
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .m-link { opacity: 0; transform: translateY(20px); transition: 0.4s; }
+        #mobile-nav.open .m-link { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
@@ -66,13 +78,16 @@
         </div>
     </nav>
 
-    <div id="mobile-nav" class="fixed inset-0 z-[120] bg-black/95 backdrop-blur-2xl flex flex-col justify-center items-center md:hidden">
-        <button id="close-menu" class="absolute top-6 right-8 glass p-3 rounded-full"><i data-lucide="x" class="w-6 h-6"></i></button>
-        <div class="flex flex-col gap-8 text-center">
-            <a href="#home" class="m-link text-4xl font-black italic uppercase">Home</a>
-            <a href="about.html" class="m-link text-4xl font-black italic uppercase outline-text">About</a>
-            <a href="services.html" class="m-link text-4xl font-black italic uppercase">Services</a>
-            <a href="work.html" class="m-link text-4xl font-black italic uppercase outline-text">Work</a>
+    <div id="mobile-nav" class="fixed inset-0 z-[120] bg-black/98 backdrop-blur-3xl flex flex-col justify-center items-center md:hidden">
+        <button id="close-menu" class="absolute top-5 right-6 glass p-3 rounded-full text-[#ff6b4a]">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="flex flex-col gap-8 text-center w-full px-10">
+            <a href="#home" class="m-link text-4xl font-black italic uppercase text-[#ff6b4a]">Home</a>
+            <a href="about.html" class="m-link text-4xl font-black italic uppercase outline-text" style="transition-delay: 0.5s;">About</a>
+            <a href="services.html" class="m-link text-4xl font-black italic uppercase" style="transition-delay: 0.6s;">Services</a>
+            <a href="work.html" class="m-link text-4xl font-black italic uppercase outline-text" style="transition-delay: 0.7s;">Work</a>
+            <a href="#contact" class="m-link text-xs font-bold uppercase tracking-[0.5em] mt-10 text-white/30" style="transition-delay: 0.8s;">Contact</a>
         </div>
     </div>
 
@@ -227,7 +242,10 @@
 
         const closeMenu = () => { 
             mobileNav.classList.remove('open'); 
-            document.body.style.overflow = 'auto'; 
+            // 🔧 Wait for animation to finish before restoring scroll
+            setTimeout(() => {
+                document.body.style.overflow = 'auto'; 
+            }, 800);
         };
 
         closeBtn.onclick = closeMenu; 
