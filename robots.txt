@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap ka link jo Google bot follow karega
-
-Sitemap: https://EhtashamShaniGraphicDesigner.github.io/Ehtasham-Shani-GraphicDesigner/sitemap.xml
+Sitemap: https://ehtashamshanigraphicdesigner.github.io/Ehtasham-Shani-GraphicDesigner/sitemap.xml
