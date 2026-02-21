@@ -26,9 +26,36 @@
         #mobile-nav { transform: translateX(100%); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         #mobile-nav.open { transform: translateX(0); }
         .outline-text { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.3); }
+
+/* --- Custom Cursor Styles --- */
+.cursor-dot, .cursor-outline {
+    pointer-events: none;
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.cursor-dot { width: 8px; height: 8px; background-color: #ff6b4a; }
+.cursor-outline { width: 40px; height: 40px; border: 2px solid #ff6b4a; transition: all 0.15s ease-out; }
+
+/* Jab kisi link par hover ho toh cursor bada ho jaye */
+.cursor-active .cursor-outline { 
+    transform: translate(-50%, -50%) scale(1.5); 
+    background-color: rgba(255, 107, 74, 0.1); 
+    border-color: transparent; 
+}
+
+/* Mobile par cursor chhupa dain kyunke wahan mouse nahi hota */
+@media (max-width: 768px) { .cursor-dot, .cursor-outline { display: none; } }
+
     </style>
 </head>
 <body>
+
+<div class="cursor-dot" data-cursor-dot></div>
+<div class="cursor-outline" data-cursor-outline></div>
 
     <nav class="fixed top-0 w-full z-[100] py-4 md:py-6 px-6 md:px-16 flex justify-between items-center bg-black/60 backdrop-blur-lg border-b border-white/5">
         <div class="text-lg md:text-xl font-black italic tracking-tighter uppercase">ES <span class="text-[#ff6b4a]">.</span></div>
@@ -242,6 +269,30 @@
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+const cursorDot = document.querySelector("[data-cursor-dot]");
+const cursorOutline = document.querySelector("[data-cursor-outline]");
+
+window.addEventListener("mousemove", function (e) {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+
+    // Outline thoda slow follow karega (smooth effect)
+    cursorOutline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+    }, { duration: 500, fill: "forwards" });
+});
+
+// Buttons aur Links par hover effect
+const interactables = document.querySelectorAll("a, button, .glass");
+interactables.forEach(el => {
+    el.addEventListener("mouseenter", () => document.body.classList.add("cursor-active"));
+    el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-active"));
+});
     </script>
    
 <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[200] flex flex-col gap-4">
@@ -264,9 +315,3 @@
     </div>
 </body>
 </html>
-
-
-
-
-
-
