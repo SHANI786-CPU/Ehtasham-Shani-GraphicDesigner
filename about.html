@@ -1,260 +1,625 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="favicon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Ehtasham Shani – Graphic & UI/UX Designer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <style>
-    :root { 
-    --accent: #ff6b4a; 
-    --glass: rgba(255, 255, 255, 0.03); 
-    --border: rgba(255, 255, 255, 0.08); 
-    --glow: rgba(255, 107, 74, 0.15);
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Ehtasham Shani – Graphic & UI/UX Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+    :root { 
+    --accent: #ff6b4a; 
+    --glass: rgba(255, 255, 255, 0.03); 
+    --border: rgba(255, 255, 255, 0.08); 
+    --glow: rgba(255, 107, 74, 0.15);
 }
 
-body { 
-    font-family: 'Plus Jakarta Sans', sans-serif; 
-    background-color: #050505; 
-    color: #ffffff; 
-    /* Main Background Glow Effects */
-    background-image: 
-        radial-gradient(circle at 15% 15%, rgba(255, 107, 74, 0.12) 0%, transparent 35%), 
-        radial-gradient(circle at 85% 85%, rgba(13, 13, 26, 0.8) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(255, 107, 74, 0.04) 0%, transparent 60%);
-    background-attachment: fixed;
-    overflow-x: hidden; 
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: #050505; 
+    color: #ffffff; 
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(255, 107, 74, 0.12) 0%, transparent 35%), 
+        radial-gradient(circle at 85% 85%, rgba(13, 13, 26, 0.8) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 107, 74, 0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+    overflow-x: hidden; 
 }
 
-/* Glass Card with Outer Glow */
-.glass { 
-    background: var(--glass); 
-    backdrop-filter: blur(15px); 
-    border: 1px solid var(--border); 
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
-    border-radius: 30px; 
-    box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), 0 0 20px rgba(255, 107, 74, 0.03);
+/* --- Glass Effect & Reveals --- */
+.glass { 
+    background: var(--glass); 
+    backdrop-filter: blur(15px); 
+    border: 1px solid var(--border); 
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+    border-radius: 30px; 
 }
 
-/* Hover Effect: Border and Glow Pop */
 .glass:hover {
-    border-color: rgba(255, 107, 74, 0.4);
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7), 0 0 25px rgba(255, 107, 74, 0.12);
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 107, 74, 0.4);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
 }
 
-/* Reveal Animation */
-.reveal { 
-    opacity: 0; 
-    transform: translateY(40px); 
-    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1); 
+.reveal { 
+    opacity: 0; 
+    transform: translateY(40px); 
+    transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1); 
 }
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-}
-
-/* Mobile Nav Styles */
-#mobile-nav { 
-    transform: translateX(100%); 
-    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
-}
-#mobile-nav.open { 
-    transform: translateX(0); 
+.reveal.active { 
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
-/* Creative Outline Text */
-.outline-text { 
-    color: transparent; 
-    -webkit-text-stroke: 1px rgba(255,255,255,0.25); 
-    transition: 0.4s;
-}
-.outline-text:hover {
-    -webkit-text-stroke: 1px var(--accent);
+/* --- 6-D Process Cards (Fix) --- */
+.process-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    transition: all 0.5s ease;
+    backdrop-filter: blur(10px);
 }
 
-/* Image container specific glow */
-.vision-glow {
-    position: relative;
-    z-index: 1;
-}
-.vision-glow::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    background: linear-gradient(45deg, var(--accent), transparent, var(--accent));
-    filter: blur(20px);
-    opacity: 0;
-    transition: 0.5s;
-    z-index: -1;
-    border-radius: 50px;
-}
-.vision-glow:hover::before {
-    opacity: 0.2;
+.process-card:hover {
+    background: rgba(255, 107, 74, 0.05);
+    border-color: var(--accent);
+    transform: translateY(-10px);
 }
 
-/* Form Input Glow */
-input:focus, textarea:focus {
-    border-color: var(--accent) !important;
-    box-shadow: 0 4px 20px rgba(255, 107, 74, 0.1);
+.number-bg {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+.process-card:hover .number-bg {
+    -webkit-text-stroke: 1px rgba(255, 107, 74, 0.3);
+    transform: scale(1.1);
+}
+
+/* --- Info Cards & Spotlight (Refined) --- */
+.info-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 3.5rem 2.5rem;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 1; /* Card ko base layer dena */
+}
+
+.info-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(255, 107, 74, 0.15) 0%, 
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.5s;
+    z-index: -1; /* Spotlight ko text ke piche bhejna */
+    pointer-events: none;
+}
+
+.info-card:hover::before {
+    opacity: 1;
+}
+
+.info-card > * {
+    position: relative;
+    z-index: 10; /* Content ko sabse upar rakhna */
+}
+
+.info-card:hover {
+    transform: translateY(-12px);
+    border-color: rgba(255, 107, 74, 0.3);
+}
+
+.accent-line {
+    width: 40px; height: 3px;
+    background: var(--accent);
+    margin-bottom: 2.5rem;
+    border-radius: 20px;
+    transition: 0.4s ease;
+}
+
+.info-card:hover .accent-line {
+    width: 80px;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+/* --- Navigation & Mobile --- */
+#mobile-nav { 
+    transform: translateX(100%); 
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+#mobile-nav.open { transform: translateX(0); }
+
+.outline-text { 
+    color: transparent; 
+    -webkit-text-stroke: 1px rgba(255,255,255,0.25); 
+}
+
+/* --- Custom Cursor --- */
+@media (min-width: 768px) {
+    html, body { cursor: none; }
+    #cursor-dot, #cursor-outline {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #cursor-dot { width: 8px; height: 8px; background: var(--accent); }
+    #cursor-outline { 
+        width: 40px; height: 40px; 
+        border: 2px solid var(--accent); 
+        transition: width 0.3s, height 0.3s, background 0.3s;
+    }
+}
+
+.cursor-hover-active #cursor-outline {
+    width: 60px; height: 60px;
+    background: rgba(255, 107, 74, 0.1);
 }
 </style>
 </head>
 <body>
-    <nav class="fixed top-0 w-full z-[100] py-4 md:py-6 px-6 md:px-16 flex justify-between items-center bg-black/60 backdrop-blur-lg border-b border-white/5">
-        <div class="text-lg md:text-xl font-black italic tracking-tighter uppercase">ES <span class="text-[#ff6b4a]">.</span></div>
-        <div class="flex items-center gap-4 md:gap-10">
-            <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-[0.3em] items-center">
-                <a href="index.html" class="hover:text-[#ff6b4a] transition">Home</a>
-                <a href="about.html" class="text-[#ff6b4a]">About</a>
-                <a href="services.html" class="hover:text-[#ff6b4a] transition">Services</a>
-                <a href="work.html" class="hover:text-[#ff6b4a] transition">Work</a>
-            </div>
-            <a href="index.html#contact" class="bg-[#ff6b4a] text-white px-5 py-2 md:px-7 md:py-2.5 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Hire</a>
-            <button id="open-menu" class="md:hidden glass p-2 text-white">
-                <i data-lucide="settings-2" class="w-5 h-5"></i>
-            </button>
-        </div>
-    </nav>
+<div id="cursor-dot"></div>
+<div id="cursor-outline"></div>
+    <nav class="fixed top-0 w-full z-[100] py-4 md:py-6 px-6 md:px-16 flex justify-between items-center bg-black/60 backdrop-blur-lg border-b border-white/5">
+        <div class="text-lg md:text-xl font-black italic tracking-tighter uppercase">ES <span class="text-[#ff6b4a]">.</span></div>
+        <div class="flex items-center gap-4 md:gap-10">
+            <div class="hidden md:flex gap-8 text-[10px] font-bold uppercase tracking-[0.3em] items-center">
+                <a href="index.html" class="hover:text-[#ff6b4a] transition">Home</a>
+                <a href="about.html" class="text-[#ff6b4a]">About</a>
+                <a href="services.html" class="hover:text-[#ff6b4a] transition">Services</a>
+                <a href="work.html" class="hover:text-[#ff6b4a] transition">Work</a>
+            </div>
+            <a href="index.html#contact" class="bg-[#ff6b4a] text-white px-5 py-2 md:px-7 md:py-2.5 rounded-full text-[9px] md:text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">Hire</a>
+            <button id="open-menu" class="md:hidden glass p-2 text-white">
+                <i data-lucide="settings-2" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </nav>
 
-    <div id="mobile-nav" class="fixed inset-0 z-[120] bg-black/95 backdrop-blur-2xl flex flex-col justify-center items-center md:hidden">
-        <button id="close-menu" class="absolute top-6 right-8 glass p-3 rounded-full">
-            <i data-lucide="x" class="w-6 h-6"></i>
-        </button>
-        <div class="flex flex-col gap-8 text-center">
-            <a href="index.html" class="m-link text-4xl font-black italic uppercase outline-text">Home</a>
-            <a href="about.html" class="m-link text-4xl font-black italic uppercase text-[#ff6b4a]">About</a>
-            <a href="services.html" class="m-link text-4xl font-black italic uppercase outline-text">Services</a>
-            <a href="work.html" class="m-link text-4xl font-black italic uppercase outline-text">Work</a>
-        </div>
-    </div>
+    <div id="mobile-nav" class="fixed inset-0 z-[120] bg-black/95 backdrop-blur-2xl flex flex-col justify-center items-center md:hidden">
+        <button id="close-menu" class="absolute top-6 right-8 glass p-3 rounded-full">
+            <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+        <div class="flex flex-col gap-8 text-center">
+            <a href="index.html" class="m-link text-4xl font-black italic uppercase outline-text">Home</a>
+            <a href="about.html" class="m-link text-4xl font-black italic uppercase text-[#ff6b4a]">About</a>
+            <a href="services.html" class="m-link text-4xl font-black italic uppercase outline-text">Services</a>
+            <a href="work.html" class="m-link text-4xl font-black italic uppercase outline-text">Work</a>
+        </div>
+    </div>
 
-    <section class="min-h-screen pt-40 px-8 md:px-24 mb-20">
-        <div class="reveal">
-            <h1 class="text-6xl md:text-8xl font-black uppercase italic mb-12">THE <span class="text-[#ff6b4a]">VISION.</span></h1>
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="glass p-10">
-                    <h2 class="text-2xl font-bold mb-6 italic">Who is Ehtasham Shani?</h2>
-                    <p class="text-gray-400 leading-relaxed mb-8">
-                        I am a Creative Designer dedicated to shaping digital experiences. My work goes beyond just setting pixels; it’s about bringing a brand’s personality to life through impactful visuals. Specializing in <b>Premium Branding, UI/UX Strategy, and High-Conversion Creative Ads</b>, I bridge the gap between imagination and reality. Based in Karachi, I transform the visions of global clients into tangible digital realities.
-                    </p>
-                    <div class="space-y-6">
-                        <h3 class="text-[#ff6b4a] font-bold tracking-widest text-sm uppercase">Design Arsenal</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10 uppercase">Adobe Photoshop</span>
-                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10 uppercase">Illustrator</span>
-                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10 uppercase">Figma</span>
-                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10 uppercase">After Effects</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass overflow-hidden h-[500px] rounded-[50px] vision-glow">
-     <img src="./Ehtasham Shani Image 2.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+    <section class="min-h-screen pt-40 px-8 md:px-24 mb-20">
+        <div class="reveal">
+            <h1 class="text-6xl md:text-8xl font-black uppercase italic mb-12">THE <span class="text-[#ff6b4a]">VISION.</span></h1>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="glass p-10">
+                    <h2 class="text-2xl font-bold mb-6 italic">Who is Ehtasham Shani?</h2>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        I am a Creative Designer dedicated to shaping digital experiences. My work goes beyond just setting pixels; it’s about bringing a brand’s personality to life through impactful visuals. Specializing in <b>Premium Branding, UI/UX Strategy, and High-Conversion Creative Ads</b>, I bridge the gap between imagination and reality. Based in Karachi, I transform the visions of global clients into tangible digital realities.
+                    </p>
+                    <div class="space-y-6">
+                        <h3 class="text-[#ff6b4a] font-bold tracking-widest text-sm uppercase">Design Arsenal</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10 uppercase">Adobe Photoshop</span>
+                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10 uppercase">Illustrator</span>
+                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10 uppercase">Figma</span>
+                            <span class="bg-white/5 px-4 py-2 rounded-full text-[10px] border border-white/10 uppercase">After Effects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass overflow-hidden h-[500px] rounded-[50px] vision-glow">
+     <img src="./Ehtasham Shani Image 2.png" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
 </div>
-            </div>
-        </div>
-    </section>
+            </div>
+        </div>
+    </section>
 
-    <section id="contact" class="py-20 md:py-32 px-6 md:px-24 bg-[#050505]">
-        <div class="max-w-7xl mx-auto">
-            <div class="reveal mb-16 md:mb-24">
-                <h2 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none">START A <br> <span class="text-[#ff6b4a]">MISSION.</span></h2>
-            </div>
-            <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-stretch">
-                <div class="lg:col-span-5 flex flex-col justify-between py-2 reveal">
-                    <div class="space-y-12 md:space-y-20">
-                        <div>
-                            <p class="text-[10px] font-bold text-[#ff6b4a] uppercase tracking-[0.4em] mb-8 flex items-center gap-2">
-                                <i data-lucide="globe" class="w-3 h-3"></i> Digital Presence
-                            </p>
-                            <div class="grid grid-cols-3 gap-y-10 gap-x-6 md:gap-x-12 mb-12">
-                                <a href="https://www.behance.net/shanikhan27" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Behance</a>
-                                <a href="https://www.instagram.com/ehtashamshani_/" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Instagram</a>
-                                <a href="https://www.linkedin.com/in/ehtasham-shani-4b0672190/" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">LinkedIn</a>
-                                <a href="https://www.upwork.com/freelancers/~017eb77fb4d0b583ff?mp_source=share" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Upwork</a>
-                                <a href="https://www.pinterest.com/ehtashamshanidesigns/" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Pinterest</a>
-                                <a href="https://www.facebook.com/ehtasham.shani.806426" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Facebook</a>
-                            </div>
-                            
-                            <div class="relative p-8 inline-block">
-                                <div class="absolute left-0 top-0 bottom-0 w-8 border-l-2 border-t-2 border-b-2 border-[#ff6b4a] rounded-tl-[40px] rounded-bl-[40px]"></div>
-                                <div class="pl-6">
-                                    <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em] mb-2">Status Update</p>
-                                    <p class="text-xl md:text-2xl font-bold italic">Available for new missions.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:col-span-7 reveal">
-                    <div class="glass p-6 md:p-14 rounded-[30px] md:rounded-[40px] border border-white/5" style="background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px);">
-                        <form action="https://formspree.io/f/xqedzjbg" method="POST" class="space-y-8 md:space-y-12">
-                            <input type="text" name="name" placeholder="YOUR NAME" class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-[#ff6b4a] transition-all text-base md:text-lg" required>
-                            <input type="email" name="email" placeholder="YOUR EMAIL" class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-[#ff6b4a] transition-all text-base md:text-lg" required>
-                            <textarea name="message" placeholder="PROJECT VISION" class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-[#ff6b4a] h-24 md:h-32 resize-none text-base md:text-lg" required></textarea>
-                            <button type="submit" class="w-full bg-[#ff6b4a] text-white py-5 md:py-6 rounded-2xl font-black uppercase text-[10px] tracking-[0.4em] hover:bg-white hover:text-black transition-all">Initiate Protocol</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="py-24 px-8 md:px-24 relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#ff6b4a]/5 blur-[120px] rounded-full -z-10"></div>
 
-    <footer class="py-12 px-6 border-t border-white/5 text-center">
-        <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em]">© 2026 EHTASHAM SHANI • DESIGNED TO INSPIRE</p>
-    </footer>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+        
+        <div class="info-card reveal group">
+            <div class="accent-line"></div>
+            <h3 class="text-2xl font-black uppercase italic mb-6 group-hover:text-[#ff6b4a] transition-colors duration-500">Who Are We</h3>
+            <p class="text-gray-400 text-sm leading-relaxed font-medium">
+                A Digital World: Your premier digital marketing partner. Experts in Social Media, Website Design, and SEO, driving traffic and maximizing online presence. Let's skyrocket your success.
+            </p>
+        </div>
+
+        <div class="info-card reveal group" style="transition-delay: 100ms;">
+            <div class="accent-line"></div>
+            <h3 class="text-2xl font-black uppercase italic mb-6 group-hover:text-[#ff6b4a] transition-colors duration-500">Our Mission</h3>
+            <p class="text-gray-400 text-sm leading-relaxed font-medium">
+                At A Digital World, our mission is to empower businesses with innovative digital marketing solutions, driving growth and success in the ever-evolving online landscape.
+            </p>
+        </div>
+
+        <div class="info-card reveal group" style="transition-delay: 200ms;">
+            <div class="accent-line"></div>
+            <h3 class="text-2xl font-black uppercase italic mb-6 group-hover:text-[#ff6b4a] transition-colors duration-500">What We Do</h3>
+            <ul class="text-gray-400 text-sm space-y-4 font-bold uppercase tracking-wider">
+                <li class="flex items-center gap-3 hover:text-white transition-all cursor-none">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-[#ff6b4a]"></i> Graphic Design
+                </li>
+                <li class="flex items-center gap-3 hover:text-white transition-all cursor-none">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-[#ff6b4a]"></i> Website Design
+                </li>
+                <li class="flex items-center gap-3 hover:text-white transition-all cursor-none">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-[#ff6b4a]"></i> Digital Marketing
+                </li>
+                <li class="flex items-center gap-3 hover:text-white transition-all cursor-none">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-[#ff6b4a]"></i> Social Media
+                </li>
+                <li class="flex items-center gap-3 hover:text-white transition-all cursor-none">
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-[#ff6b4a]"></i> SEO / Other Services
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</section>
+
+<section class="py-20 px-8 md:px-24 bg-white/[0.01]">
+    <div class="max-w-7xl mx-auto">
+        <div class="reveal mb-20">
+            <h2 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter">OUR 6-D <span class="text-[#ff6b4a]">PROCESS.</span></h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-10">
+            
+            <div class="reveal process-card p-10 rounded-[40px] group relative">
+                <span class="number-bg text-8xl font-black absolute -top-10 -right-4 z-0 select-none">01</span>
+                <div class="process-content relative z-10">
+                    <h4 class="text-xl font-bold uppercase italic text-[#ff6b4a] mb-4 tracking-widest">Discover</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Exploring insights, market research, and client requirements to build a solid project foundation.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal process-card p-10 rounded-[40px] group relative">
+                <span class="number-bg text-8xl font-black absolute -top-10 -right-4 z-0 select-none">02</span>
+                <div class="process-content relative z-10">
+                    <h4 class="text-xl font-bold uppercase italic text-[#ff6b4a] mb-4 tracking-widest">Define</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Establishing clear goals, project scope, and brand strategy to align with your vision.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal process-card p-10 rounded-[40px] group relative">
+                <span class="number-bg text-8xl font-black absolute -top-10 -right-4 z-0 select-none">03</span>
+                <div class="process-content relative z-10">
+                    <h4 class="text-xl font-bold uppercase italic text-[#ff6b4a] mb-4 tracking-widest">Design</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Creating high-end visuals and intuitive interfaces that bring the brand's personality to life.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal process-card p-10 rounded-[40px] group relative">
+                <span class="number-bg text-8xl font-black absolute -top-10 -right-4 z-0 select-none">04</span>
+                <div class="process-content relative z-10">
+                    <h4 class="text-xl font-bold uppercase italic text-[#ff6b4a] mb-4 tracking-widest">Develop</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Transforming designs into functional digital assets with precision and attention to detail.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal process-card p-10 rounded-[40px] group relative">
+                <span class="number-bg text-8xl font-black absolute -top-10 -right-4 z-0 select-none">05</span>
+                <div class="process-content relative z-10">
+                    <h4 class="text-xl font-bold uppercase italic text-[#ff6b4a] mb-4 tracking-widest">Deploy</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Launching the finalized solution into the digital world, ensuring everything is optimized.
+                    </p>
+                </div>
+            </div>
+
+            <div class="reveal process-card p-10 rounded-[40px] group relative">
+                <span class="number-bg text-8xl font-black absolute -top-10 -right-4 z-0 select-none">06</span>
+                <div class="process-content relative z-10">
+                    <h4 class="text-xl font-bold uppercase italic text-[#ff6b4a] mb-4 tracking-widest">Deliver</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Handing over the final mission-ready assets and ensuring long-term project success.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-20 px-8 md:px-24">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+        <div class="reveal">
+            <h3 class="text-4xl md:text-6xl font-black italic text-[#ff6b4a] mb-2">
+                <span class="counter" data-target="50">0</span>+
+            </h3>
+            <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">Projects Done</p>
+        </div>
+        
+        <div class="reveal" style="transition-delay: 100ms;">
+            <h3 class="text-4xl md:text-6xl font-black italic text-white mb-2">
+                <span class="counter" data-target="30">0</span>+
+            </h3>
+            <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">Happy Clients</p>
+        </div>
+        
+        <div class="reveal" style="transition-delay: 200ms;">
+            <h3 class="text-4xl md:text-6xl font-black italic text-[#ff6b4a] mb-2">
+                <span class="counter" data-target="3">0</span>+
+            </h3>
+            <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">Years Exp.</p>
+        </div>
+        
+        <div class="reveal" style="transition-delay: 300ms;">
+            <h3 class="text-4xl md:text-6xl font-black italic text-white mb-2">
+                <span class="counter" data-target="12">0</span>+
+            </h3>
+            <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-500">Skill Sets</p>
+        </div>
+    </div>
+</section>
+
+    <section id="contact" class="py-20 md:py-32 px-6 md:px-24 bg-[#050505]">
+        <div class="max-w-7xl mx-auto">
+            <div class="reveal mb-16 md:mb-24">
+                <h2 class="text-5xl md:text-8xl font-black uppercase italic tracking-tighter leading-none">START A <br> <span class="text-[#ff6b4a]">MISSION.</span></h2>
+            </div>
+            <div class="grid lg:grid-cols-12 gap-12 md:gap-16 items-stretch">
+                <div class="lg:col-span-5 flex flex-col justify-between py-2 reveal">
+                    <div class="space-y-12 md:space-y-20">
+                        <div>
+                            <p class="text-[10px] font-bold text-[#ff6b4a] uppercase tracking-[0.4em] mb-8 flex items-center gap-2">
+                                <i data-lucide="globe" class="w-3 h-3"></i> Digital Presence
+                            </p>
+                            <div class="grid grid-cols-3 gap-y-10 gap-x-6 md:gap-x-12 mb-12">
+                                <a href="https://www.behance.net/shanikhan27" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Behance</a>
+                                <a href="https://www.instagram.com/ehtashamshani_/" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Instagram</a>
+                                <a href="https://www.linkedin.com/in/ehtasham-shani-4b0672190/" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">LinkedIn</a>
+                                <a href="https://www.upwork.com/freelancers/~017eb77fb4d0b583ff?mp_source=share" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Upwork</a>
+                                <a href="https://www.pinterest.com/ehtashamshanidesigns/" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Pinterest</a>
+                                <a href="https://www.facebook.com/ehtasham.shani.806426" class="text-[11px] md:text-sm font-bold italic border-b border-white/10 pb-2 hover:border-[#ff6b4a] transition w-fit">Facebook</a>
+                            </div>
+                            
+                            <div class="relative p-8 inline-block">
+                                <div class="absolute left-0 top-0 bottom-0 w-8 border-l-2 border-t-2 border-b-2 border-[#ff6b4a] rounded-tl-[40px] rounded-bl-[40px]"></div>
+                                <div class="pl-6">
+                                    <p class="text-[9px] text-gray-400 font-bold uppercase tracking-[0.3em] mb-2">Status Update</p>
+                                    <p class="text-xl md:text-2xl font-bold italic">Available for new missions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 reveal">
+                    <div class="glass p-6 md:p-14 rounded-[30px] md:rounded-[40px] border border-white/5" style="background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px);">
+                        <form action="https://formspree.io/f/xqedzjbg" method="POST" class="space-y-8 md:space-y-12">
+                            <input type="text" name="name" placeholder="YOUR NAME" class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-[#ff6b4a] transition-all text-base md:text-lg" required>
+                            <input type="email" name="email" placeholder="YOUR EMAIL" class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-[#ff6b4a] transition-all text-base md:text-lg" required>
+                            <textarea name="message" placeholder="PROJECT VISION" class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-[#ff6b4a] h-24 md:h-32 resize-none text-base md:text-lg" required></textarea>
+                            <button type="submit" class="w-full bg-[#ff6b4a] text-white py-5 md:py-6 rounded-2xl font-black uppercase text-[10px] tracking-[0.4em] hover:bg-white hover:text-black transition-all">Initiate Protocol</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section class="py-24 px-8 md:px-24 bg-white/[0.02]">
+    <div class="max-w-7xl mx-auto">
+        <div class="reveal mb-16">
+            <p class="text-[10px] font-bold text-[#ff6b4a] uppercase tracking-[0.4em] mb-4">Voices of Success</p>
+            <h2 class="text-5xl md:text-7xl font-black uppercase italic tracking-tighter">CLIENT <span class="text-[#ff6b4a]">FEEDBACK.</span></h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="glass p-10 relative overflow-hidden group border-l-4 border-l-[#ff6b4a]">
+                <i data-lucide="quote" class="absolute top-6 right-6 w-12 h-12 text-white/5 group-hover:text-[#ff6b4a]/20 transition-colors"></i>
+                <p class="text-gray-300 italic leading-relaxed mb-8 text-lg">
+                    "Ehtasham's design sense is exceptional. He didn't just design a logo; he created a whole visual identity that resonated with our target audience perfectly."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-[#ff6b4a] to-orange-300"></div>
+                    <div>
+                        <h4 class="font-bold uppercase text-sm tracking-wider">James Wilson</h4>
+                        <p class="text-[10px] text-gray-500 uppercase">CEO, TechStream</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-10 relative overflow-hidden group border-l-4 border-l-[#ff6b4a]">
+                <i data-lucide="quote" class="absolute top-6 right-6 w-12 h-12 text-white/5 group-hover:text-[#ff6b4a]/20 transition-colors"></i>
+                <p class="text-gray-300 italic leading-relaxed mb-8 text-lg">
+                    "The UI/UX strategy provided by Ehtasham increased our conversion rate by 40%. A true professional who knows how to blend art with results."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-gray-600 to-white"></div>
+                    <div>
+                        <h4 class="font-bold uppercase text-sm tracking-wider">Sarah Ahmed</h4>
+                        <p class="text-[10px] text-gray-500 uppercase">Founder, Modish Brand</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="py-10 bg-[#ff6b4a] overflow-hidden whitespace-nowrap rotate-[-1deg] scale-105 z-10 relative">
+    <div class="flex gap-10 animate-marquee text-black font-black italic text-2xl md:text-4xl uppercase tracking-tighter">
+        <span>Premium Branding • UI/UX Design • Social Media Ads • Strategy • High Conversion • </span>
+        <span>Premium Branding • UI/UX Design • Social Media Ads • Strategy • High Conversion • </span>
+        <span>Premium Branding • UI/UX Design • Social Media Ads • Strategy • High Conversion • </span>
+    </div>
+</div>
+
+<style>
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+    display: inline-flex;
+    width: max-content;
+}
+</style>
+
+    <footer class="py-12 px-6 border-t border-white/5 text-center">
+        <p class="text-[10px] text-gray-600 uppercase tracking-[0.5em]">© 2026 EHTASHAM SHANI • DESIGNED TO INSPIRE</p>
+    </footer>
 
 <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[200] flex flex-col gap-4">
-        <a href="mailto:ehtashamshaniofficial@gmail.com" 
-           class="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#ff6b4a] rounded-full shadow-[0_10px_25px_rgba(255,107,74,0.3)] hover:scale-110 active:scale-95 transition-all duration-300 group"
-           aria-label="Send an Email">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-8 md:h-8 text-white transition-transform group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-        </a>
+        <a href="mailto:ehtashamshaniofficial@gmail.com" 
+           class="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#ff6b4a] rounded-full shadow-[0_10px_25px_rgba(255,107,74,0.3)] hover:scale-110 active:scale-95 transition-all duration-300 group"
+           aria-label="Send an Email">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 md:w-8 md:h-8 text-white transition-transform group-hover:rotate-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+        </a>
 
-        <a href="https://wa.me/923356440525?text=Hi%20Ehtasham,%20I%20saw%20your%20portfolio%20and%20I%20want%20to%20discuss%20a%20design%20project!" 
-           target="_blank" 
-           class="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all duration-300"
-           aria-label="Contact on WhatsApp">
-            <svg viewBox="0 0 24 24" class="w-8 h-8 md:w-9 md:h-9 fill-white">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-        </a>
-    </div>
+        <a href="https://wa.me/923356440525?text=Hi%20Ehtasham,%20I%20saw%20your%20portfolio%20and%20I%20want%20to%20discuss%20a%20design%20project!" 
+           target="_blank" 
+           class="flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.3)] hover:scale-110 active:scale-95 transition-all duration-300"
+           aria-label="Contact on WhatsApp">
+            <svg viewBox="0 0 24 24" class="w-8 h-8 md:w-9 md:h-9 fill-white">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </a>
+    </div>
 
-    <script>
-        lucide.createIcons();
-        const openBtn = document.getElementById('open-menu');
-        const closeBtn = document.getElementById('close-menu');
-        const mobileNav = document.getElementById('mobile-nav');
-        const mLinks = document.querySelectorAll('.m-link');
+    <style>
+   .info-card::before {
+            z-index: 0;
+            pointer-events: none;
+        }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+</style>
 
-        openBtn.addEventListener('click', () => {
-            mobileNav.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
+<script>
+    lucide.createIcons();
+    
+    // Mobile Menu Logic
+    const openBtn = document.getElementById('open-menu');
+    const closeBtn = document.getElementById('close-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    const mLinks = document.querySelectorAll('.m-link');
 
-        const closeMenu = () => {
-            mobileNav.classList.remove('open');
-            document.body.style.overflow = 'auto';
-        };
+    openBtn.addEventListener('click', () => {
+        mobileNav.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    });
 
-        closeBtn.addEventListener('click', closeMenu);
-        mLinks.forEach(link => link.addEventListener('click', closeMenu));
+    const closeMenu = () => {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    };
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { 
-                if (entry.isIntersecting) entry.target.classList.add('active'); 
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    </script>
+    closeBtn.addEventListener('click', closeMenu);
+    mLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Reveal Animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { 
+            if (entry.isIntersecting) entry.target.classList.add('active'); 
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // --- Optimized Cursor & Spotlight ---
+const dot = document.getElementById("cursor-dot");
+const outline = document.getElementById("cursor-outline");
+
+window.addEventListener("mousemove", (e) => {
+    const { clientX: posX, clientY: posY } = e;
+
+    // Smooth Cursor Movement
+    dot.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
+    outline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+    }, { duration: 500, fill: "forwards", easing: "ease-out" });
+
+    // Optimized Spotlight for Info Cards
+    const cards = document.querySelectorAll('.info-card');
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (posX > rect.left && posX < rect.right && posY > rect.top && posY < rect.bottom) {
+            const x = posX - rect.left;
+            const y = posY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        }
+    });
+});
+
+    // Hover Scaling for Cursor
+    const targets = document.querySelectorAll('a, button, .process-card, .info-card, input, textarea');
+    targets.forEach(t => {
+        t.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover-active'));
+        t.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover-active'));
+    });
+
+// --- Counter Animation ---
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // Animation 2 seconds tak chalegi
+                const stepTime = Math.max(duration / target, 20); 
+                
+                let current = 0;
+                const timer = setInterval(() => {
+                    // Agar number bada hai (jaise 50), toh speed barhane ke liye logic
+                    const increment = target > 10 ? Math.ceil(target / 50) : 1;
+                    current += increment;
+
+                    if (current >= target) {
+                        counter.innerText = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.innerText = current;
+                    }
+                }, stepTime);
+
+                counterObserver.unobserve(counter); // Taake baar baar scroll karne par repeat na ho
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+</script>
 </body>
 </html>
-
